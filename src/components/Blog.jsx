@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import {
     pageViewHandler,
-    signupButtonClickHandler,
+    signupClickHandler,
     getVariationText,
 } from '../index.js'
+import book from '../assets/book_header.png'
 
 function Blog() {
     const [variationText, setVariationText] = useState(null)
@@ -16,19 +17,14 @@ function Blog() {
 
     return (
         <>
-            <h1>Check out the Blinkist app</h1>
+            <img width="300" src={book} alt="book image" />
+            <h1 className='blog-title'>Check out the Blinkist app</h1>
 
-            <img
-                width="300"
-                src="images/hero_image.jpg"
-                alt="Check out the Blinkist app"
-            />
+            <div className='blog-description'>{variationText}</div>
 
-            <div>{variationText}</div>
-
-            <div>
+            <div className='blog-action'>
                 Thanks a lot for reading the article!
-                <a onClick={() => signupButtonClickHandler()}>SIGN UP</a>
+                <a className='blog-signUpButton' onClick={() => signupClickHandler()}>SIGN UP</a>
                 for Blinkist.
             </div>
         </>
