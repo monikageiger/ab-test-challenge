@@ -17,14 +17,19 @@ function Blog() {
 
     return (
         <>
-            <img width="300" src={book} alt="book image" />
-            <h1 className='blog-title'>Check out the Blinkist app</h1>
+            <img className="blog-image" src={book} alt="book image" />
+            <h1 className="blog-title">Check out the Blinkist app</h1>
 
-            <div className='blog-description'>{variationText}</div>
+            <div className="blog-description">{variationText}</div>
 
-            <div className='blog-action'>
+            <div className="blog-action">
                 Thanks a lot for reading the article!
-                <a className='blog-signUpButton' onClick={() => signupClickHandler()}>SIGN UP</a>
+                <a
+                    className="blog-signUpButton"
+                    onClick={() => signupClickHandler()}
+                >
+                    SIGN UP
+                </a>
                 for Blinkist.
             </div>
         </>
