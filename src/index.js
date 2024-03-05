@@ -1,4 +1,5 @@
-import { trackPageView, trackEvent } from './analytics-api'
+import { trackPageView, trackEvent } from './utils/analytics-api'
+import text from './data/text.json'
 
 const USER_ID_KEY = 'userId'
 const VARIATION_KEY = 'variation'
@@ -26,8 +27,14 @@ export function getVariation() {
         VARIATION_KEY,
         Math.random() < 0.5 ? 'test' : 'control'
     )
+
     localStorage.setItem(VARIATION_KEY, variation)
+
     return variation
+}
+
+export function getVariationText() {
+    return text[getVariation()] || text.test
 }
 
 export const pageViewHandler = () => {
@@ -59,4 +66,3 @@ export const signupButtonClickHandler = () => {
 
     trackEvent(data)
 }
-
