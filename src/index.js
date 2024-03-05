@@ -65,7 +65,7 @@ export const pageViewHandler = () => {
         variation: getVariation(),
         page_view_count: pageViewCount,
     }
-    
+
     trackPageView(data)
 }
 
@@ -82,7 +82,7 @@ export const signupClickHandler = () => {
         variation: getVariation(),
         page_view_count: getFromLocalStorage(PAGE_VIEW_KEY),
         conversion: signUpClickCount === 1,
-        sing_up_click_count: signUpClickCount,
+        sign_up_click_count: signUpClickCount,
     }
 
     trackEvent(data)
